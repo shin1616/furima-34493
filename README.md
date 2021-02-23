@@ -51,6 +51,7 @@ Things you may want to cover:
 | -------------- | ---------- | ------------------------------ |
 | name           | string     | null: false                    |
 | price          | integer    | null: false                    |
+| text           | string     | null: false                    |
 | category_id    | integer    | null: false                    |
 | status_id      | integer    | null: false                    |
 | postage_id     | integer    | null: false                    |
