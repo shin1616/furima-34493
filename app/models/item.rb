@@ -7,11 +7,12 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :period
   has_one_attached :image
+  belongs_to :user
 
   VALID_PRICE = /\A[0-9]+\z/
   with_options presence: true do
     validates :name
-    validates :price,format: { with: VALID_PRICE }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 999999}
+    validates :price, format: { with: VALID_PRICE }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 999999}
     validates :text
     validates :category_id
     validates :status_id
