@@ -12,7 +12,8 @@ class Item < ApplicationRecord
   VALID_PRICE = /\A[0-9]+\z/
   with_options presence: true do
     validates :name
-    validates :price, format: { with: VALID_PRICE }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+    validates :price, format: { with: VALID_PRICE },
+                      numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
     validates :text
     validates :category_id
     validates :status_id

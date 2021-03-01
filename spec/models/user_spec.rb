@@ -76,7 +76,7 @@ RSpec.describe User, type: :model do
         @user.password = 'ａbc123'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
     end
   end
