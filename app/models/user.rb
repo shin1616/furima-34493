@@ -9,7 +9,7 @@ class User < ApplicationRecord
   VALID_NAME_KANA = /\A[ァ-ヶ]+\z/
 
   with_options presence: true do
-    validates :password,          format: { with: VALID_PASSWORD_MIX }
+    validates :password, format: { with: VALID_PASSWORD_MIX }
     validates :nickname
     validates :family_name,       format: { with: VALID_NAME_KANJI }
     validates :first_name,        format: { with: VALID_NAME_KANJI }
@@ -17,4 +17,6 @@ class User < ApplicationRecord
     validates :first_name_kana,   format: { with: VALID_NAME_KANA }
     validates :birth_day
   end
+
+  has_many :items
 end
