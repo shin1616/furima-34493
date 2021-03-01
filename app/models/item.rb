@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  belongs_to :user
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
@@ -6,8 +7,6 @@ class Item < ApplicationRecord
   belongs_to :postage
   belongs_to :prefecture
   belongs_to :period
-  has_one_attached :image
-  belongs_to :user
 
   VALID_PRICE = /\A[0-9]+\z/
   with_options presence: true do
