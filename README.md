@@ -43,7 +43,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :purchases
+- has_many :orders
 
 ## items テーブル
 
@@ -62,9 +62,9 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one    :purchase
+- has_one    :order
 
-## purchases テーブル
+## orders テーブル
 
 | Column | Type       | Options                  |
 | ------ | ---------- | ------------------------ |
@@ -87,8 +87,8 @@ Things you may want to cover:
 | address        | string     | null: false              |
 | apartment      | string     | null: true               |
 | phone_number   | string     | null: false              |
-| purchase       | references | null: false, foreign_key |
+| order          | references | null: false, foreign_key |
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :order
