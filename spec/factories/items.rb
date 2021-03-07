@@ -9,5 +9,8 @@ FactoryBot.define do
     prefecture_id { Faker::Number.within(range: 2..48) }
     period_id     { Faker::Number.within(range: 2..4) }
     price         { Faker::Number.within(range: 300..9_999_999) }
+    after(:build) do |item|
+      item.image.attach(io: File.open('app/assets/images/test.png'), filename: 'test_image.png')
+    end
   end
 end
