@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     validates :period_id
     validates :images
   end
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: "を選択してください" } do
     validates :category_id
     validates :status_id
     validates :postage_id
