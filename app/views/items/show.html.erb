@@ -7,12 +7,10 @@
       <%= @item.name %>
     </h2>
     <div class="item-img-content">
-      <%= image_tag @item.images ,class:"item-box-img" %>
-        <div class="items-img">
-          <% item.images.each do |image| %>
-            <%= image_tag image, class:'images' %>
-          <% end %>
-        </div>
+      <% @item.images.each do |image| %>
+        <%= image_tag image ,class:"item-box-img" %>
+        <div class="items-img"></div>
+      <% end %>
       <% if @item.order.present? %>
         <div class="sold-out">
           <span>Sold Out!!</span>
