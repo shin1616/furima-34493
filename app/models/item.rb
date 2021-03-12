@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_one :order
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     validates :postage_id
     validates :prefecture_id
     validates :period_id
-    validates :image
+    validates :images
   end
   with_options numericality: { other_than: 1 } do
     validates :category_id
