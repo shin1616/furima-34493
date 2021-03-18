@@ -7,7 +7,10 @@
     </h1>
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
-      <%= image_tag @item.image, class: 'buy-item-img' %>
+      <% @item.images.each do |image| %>
+        <%= image_tag image, class: 'buy-item-img' %>
+        <div class="items-img"></div>
+      <% end %>
       <div class='buy-item-right-content'>
         <h2 class='buy-item-text'>
           <%= @item.name %>
@@ -38,9 +41,24 @@
 
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
-        クレジットカード情報入力
+        クレジットカード情報
       </h1>
-      <div class="form-group">
+      <div class="Card_info">
+    【カード番号】
+    <br>
+    <%= "**** **** **** " + @card[:last4] %>
+    <%# カード番号の下4桁を取得 %>
+
+    <br>
+    【有効期限】
+    <br>
+    <%= @card[:exp_month] %>
+    <%# 有効期限の「月」を取得 %>
+    /
+    <%= @card[:exp_year] %>
+    <%# 有効期限の「年」を取得 %>
+  </div>
+<!--      <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">カード情報</label>
           <span class="indispensable">必須</span>
@@ -71,7 +89,7 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :cvc, class:"input-default", id:"card-cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
-      </div>
+      </div>-->
     </div>
     <%# /カード情報の入力 %>
     
